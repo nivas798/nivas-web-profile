@@ -32,115 +32,103 @@ const Portfolio = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 text-foreground">
+    <div className="min-h-screen bg-[hsl(var(--portfolio-navy))] text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50 shadow-sm">
+      <nav className="fixed top-0 w-full bg-[hsl(var(--portfolio-navy))]/95 backdrop-blur-sm z-50">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-[hsl(var(--professional-navy))]">Alugubelli Nivas</h1>
+          <h1 className="text-xl font-bold text-[hsl(var(--portfolio-teal))]">Alugubelli Nivas</h1>
           <div className="hidden md:flex space-x-8">
-            <a href="#home" className="text-[hsl(var(--professional-gray))] hover:text-[hsl(var(--professional-navy))] transition-colors font-medium">Home</a>
-            <a href="#about" className="text-[hsl(var(--professional-gray))] hover:text-[hsl(var(--professional-navy))] transition-colors font-medium">About</a>
-            <a href="#skills" className="text-[hsl(var(--professional-gray))] hover:text-[hsl(var(--professional-navy))] transition-colors font-medium">Skills</a>
-            <a href="#education" className="text-[hsl(var(--professional-gray))] hover:text-[hsl(var(--professional-navy))] transition-colors font-medium">Education</a>
-            <a href="#projects" className="text-[hsl(var(--professional-gray))] hover:text-[hsl(var(--professional-navy))] transition-colors font-medium">Projects</a>
+            <a href="#home" className="text-white hover:text-[hsl(var(--portfolio-teal))] transition-colors font-medium uppercase tracking-wider">ABOUT</a>
+            <a href="#skills" className="text-white hover:text-[hsl(var(--portfolio-teal))] transition-colors font-medium uppercase tracking-wider">SKILLS</a>
+            <a href="#education" className="text-white hover:text-[hsl(var(--portfolio-teal))] transition-colors font-medium uppercase tracking-wider">EDUCATION</a>
+            <a href="#projects" className="text-white hover:text-[hsl(var(--portfolio-teal))] transition-colors font-medium uppercase tracking-wider">PROJECTS</a>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-20 min-h-screen flex items-center bg-white">
+      <section id="home" className="pt-20 min-h-screen flex items-center bg-[hsl(var(--portfolio-navy))]">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <h2 className="text-5xl md:text-6xl font-bold text-[hsl(var(--professional-navy))] leading-tight">
+              <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight">
                 Hello,
               </h2>
-              <h2 className="text-5xl md:text-6xl font-bold text-[hsl(var(--professional-navy))] leading-tight">
-                This is <span className="text-transparent bg-clip-text bg-[var(--gradient-accent)]">ALUGUBELLI NIVAS</span>.
+              <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+                This is <span className="text-[hsl(var(--portfolio-pink))]">ALUGUBELLI NIVAS</span>.
               </h2>
             </div>
-            <div className="space-y-3 text-xl md:text-2xl text-[hsl(var(--professional-gray))]">
-              <p className="font-medium">AI & ML Enthusiast,</p>
-              <p className="font-medium">Ambitious B.Tech Student</p>
+            <div className="space-y-3 text-xl md:text-2xl text-white">
+              <p>AI & ML Enthusiast,</p>
+              <p>Ambitious B.Tech Student</p>
             </div>
             
-            {/* Personal Traits */}
-            <div className="grid grid-cols-2 gap-6 text-base text-[hsl(var(--professional-gray))]">
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 bg-[hsl(var(--professional-gold))] rounded-full"></div>
-                <span className="font-medium">Hard Worker</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 bg-[hsl(var(--professional-navy))] rounded-full"></div>
-                <span className="font-medium">Quick Learner</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 bg-[hsl(var(--professional-gray))] rounded-full"></div>
-                <span className="font-medium">Problem Solver</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 bg-[hsl(var(--professional-gold))] rounded-full"></div>
-                <span className="font-medium">Motivated</span>
-              </div>
-            </div>
+            <Button className="bg-[hsl(var(--portfolio-pink))] hover:bg-[hsl(var(--portfolio-pink))]/80 text-white px-8 py-4 rounded-full text-lg font-semibold">
+              Resume
+            </Button>
 
             {/* Social Links */}
-            <div className="flex gap-4">
+            <div className="flex gap-6 pt-4">
               <Button 
-                variant="outline" 
+                variant="ghost" 
                 size="icon"
-                className="border-[hsl(var(--professional-navy))]/30 text-[hsl(var(--professional-navy))] hover:bg-[hsl(var(--professional-navy))]/10 hover:border-[hsl(var(--professional-navy))]"
-                onClick={() => window.open('https://www.instagram.com/__.nivasss04/', '_blank')}
-              >
-                <Instagram size={20} />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="icon"
-                className="border-[hsl(var(--professional-gray))]/30 text-[hsl(var(--professional-gray))] hover:bg-[hsl(var(--professional-gray))]/10 hover:border-[hsl(var(--professional-gray))]"
-                onClick={() => window.open('https://github.com/nivas798', '_blank')}
-              >
-                <Github size={20} />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="icon"
-                className="border-[hsl(var(--professional-navy))]/30 text-[hsl(var(--professional-navy))] hover:bg-[hsl(var(--professional-navy))]/10 hover:border-[hsl(var(--professional-navy))]"
+                className="text-white hover:text-[hsl(var(--portfolio-teal))] hover:bg-transparent text-2xl"
                 onClick={() => window.open('https://www.linkedin.com/in/nivas-alugubelli-94bb9a325', '_blank')}
               >
-                <Linkedin size={20} />
+                <Linkedin size={28} />
               </Button>
               <Button 
-                variant="outline" 
+                variant="ghost" 
                 size="icon"
-                className="border-[hsl(var(--professional-gold))]/40 text-[hsl(var(--professional-gold))] hover:bg-[hsl(var(--professional-gold))]/10 hover:border-[hsl(var(--professional-gold))]"
+                className="text-white hover:text-[hsl(var(--portfolio-teal))] hover:bg-transparent text-2xl"
+                onClick={() => window.open('https://github.com/nivas798', '_blank')}
+              >
+                <Github size={28} />
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="icon"
+                className="text-white hover:text-[hsl(var(--portfolio-teal))] hover:bg-transparent text-2xl"
                 onClick={() => window.open('mailto:nivasalugubelli6@gmail.com', '_blank')}
               >
-                <Mail size={20} />
+                <Mail size={28} />
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="icon"
+                className="text-white hover:text-[hsl(var(--portfolio-teal))] hover:bg-transparent text-2xl"
+                onClick={() => window.open('https://www.instagram.com/__.nivasss04/', '_blank')}
+              >
+                <Instagram size={28} />
               </Button>
             </div>
-            
-            <Button className="bg-[var(--gradient-professional)] hover:shadow-[var(--shadow-professional)] text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
-              View Resume
-            </Button>
           </div>
           
-          {/* Professional Code Panel */}
-          <div className="bg-[hsl(var(--professional-light-gray))] rounded-xl p-8 border border-gray-200 font-mono text-sm shadow-[var(--shadow-card)]">
+          {/* Code Panel with Yellow Border */}
+          <div className="bg-[hsl(var(--portfolio-navy))] rounded-lg p-8 border-4 border-[hsl(var(--portfolio-yellow))] font-mono text-sm relative">
             <div className="flex gap-2 mb-6">
-              <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-              <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-              <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+              <div className="w-3 h-3 bg-[hsl(var(--portfolio-teal))] rounded-full"></div>
+              <div className="w-3 h-3 bg-[hsl(var(--portfolio-pink))] rounded-full"></div>
+              <div className="w-3 h-3 bg-[hsl(var(--portfolio-yellow))] rounded-full"></div>
             </div>
-            <div className="space-y-2 text-[hsl(var(--professional-dark-gray))]">
-              <div><span className="text-purple-600 font-semibold">const</span> <span className="text-blue-600 font-semibold">student</span> = {`{`}</div>
-              <div className="ml-4"><span className="text-green-600">name</span>: <span className="text-amber-600">'Alugubelli Nivas'</span>,</div>
-              <div className="ml-4"><span className="text-green-600">education</span>: <span className="text-amber-600">'B.Tech CSE AI&ML'</span>,</div>
-              <div className="ml-4"><span className="text-green-600">university</span>: <span className="text-amber-600">'SRM IST Tiruchirappalli'</span>,</div>
-              <div className="ml-4"><span className="text-green-600">year</span>: <span className="text-amber-600">'2024-2028'</span>,</div>
-              <div className="ml-4"><span className="text-green-600">cgpa</span>: <span className="text-[hsl(var(--professional-gold))] font-semibold">9.5</span>,</div>
-              <div className="ml-4"><span className="text-green-600">skills</span>: [<span className="text-amber-600">'Python'</span>, <span className="text-amber-600">'AI'</span>, <span className="text-amber-600">'ML'</span>],</div>
-              <div className="ml-4"><span className="text-green-600">passionate</span>: <span className="text-[hsl(var(--professional-gold))] font-semibold">true</span></div>
+            <div className="space-y-2 text-white">
+              <div><span className="text-[hsl(var(--portfolio-pink))]">const</span> <span className="text-[hsl(var(--portfolio-teal))]">coder</span> = {`{`}</div>
+              <div className="ml-4"><span className="text-[hsl(var(--portfolio-teal))]">name</span>:<span className="text-[hsl(var(--portfolio-yellow))]">'Alugubelli Nivas'</span>,</div>
+              <div className="ml-4"><span className="text-[hsl(var(--portfolio-teal))]">skills</span>:[<span className="text-[hsl(var(--portfolio-yellow))]">'Python'</span>, <span className="text-[hsl(var(--portfolio-yellow))]">'Java'</span>, <span className="text-[hsl(var(--portfolio-yellow))]">'C++'</span>,</div>
+              <div className="ml-12"><span className="text-[hsl(var(--portfolio-yellow))]">'React'</span>, <span className="text-[hsl(var(--portfolio-yellow))]">'HTML'</span>, <span className="text-[hsl(var(--portfolio-yellow))]">'CSS'</span>,</div>
+              <div className="ml-12"><span className="text-[hsl(var(--portfolio-yellow))]">'Javascript'</span>, <span className="text-[hsl(var(--portfolio-yellow))]">'Node.js'</span>, <span className="text-[hsl(var(--portfolio-yellow))]">'Git'</span>,</div>
+              <div className="ml-12"><span className="text-[hsl(var(--portfolio-yellow))]">'MySQL'</span>, <span className="text-[hsl(var(--portfolio-yellow))]">'MongoDB'</span>, <span className="text-[hsl(var(--portfolio-yellow))]">'AI'</span>,</div>
+              <div className="ml-12"><span className="text-[hsl(var(--portfolio-yellow))]">'ML'</span>],</div>
+              <div className="ml-4"><span className="text-[hsl(var(--portfolio-teal))]">hardWorker</span>:<span className="text-[hsl(var(--portfolio-pink))]">true</span>,</div>
+              <div className="ml-4"><span className="text-[hsl(var(--portfolio-teal))]">quickLearner</span>:<span className="text-[hsl(var(--portfolio-pink))]">true</span>,</div>
+              <div className="ml-4"><span className="text-[hsl(var(--portfolio-teal))]">problemSolver</span>:<span className="text-[hsl(var(--portfolio-pink))]">true</span>,</div>
+              <div className="ml-4"><span className="text-[hsl(var(--portfolio-teal))]">motivated</span>:<span className="text-[hsl(var(--portfolio-pink))]">true</span>,</div>
+              <div className="ml-4"><span className="text-[hsl(var(--portfolio-teal))]">interests</span>:<span className="text-[hsl(var(--portfolio-pink))]">function</span>() {`{`}</div>
+              <div className="ml-8"><span className="text-[hsl(var(--portfolio-pink))]">return</span>(</div>
+              <div className="ml-12"><span className="text-[hsl(var(--portfolio-teal))]">this</span>.<span className="text-[hsl(var(--portfolio-yellow))]">Music</span> &&</div>
+              <div className="ml-12"><span className="text-[hsl(var(--portfolio-teal))]">this</span>.<span className="text-[hsl(var(--portfolio-yellow))]">VideoEditing</span></div>
+              <div className="ml-8">)</div>
+              <div className="ml-4">{`}`}</div>
               <div>{`};`}</div>
             </div>
           </div>
@@ -148,17 +136,17 @@ const Portfolio = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 bg-[hsl(var(--professional-light-gray))]">
+      <section id="about" className="py-24 bg-[hsl(var(--portfolio-navy))]">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-[hsl(var(--professional-navy))]">About Me</h2>
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="flex justify-center">
-              <Avatar className="w-80 h-80 border-4 border-[hsl(var(--professional-gold))] shadow-[var(--shadow-card)]">
+              <Avatar className="w-80 h-80 border-4 border-[hsl(var(--portfolio-teal))]">
                 <AvatarImage src="/lovable-uploads/169e5a3e-23da-4821-9451-22e3cfd6e036.png" alt="Alugubelli Nivas" />
-                <AvatarFallback className="text-6xl bg-[var(--gradient-professional)] text-white">AN</AvatarFallback>
+                <AvatarFallback className="text-6xl bg-[hsl(var(--portfolio-teal))] text-white">AN</AvatarFallback>
               </Avatar>
             </div>
-            <div className="space-y-6 text-lg text-[hsl(var(--professional-gray))]">
+            <div className="space-y-6 text-lg text-white">
+              <h2 className="text-4xl font-bold mb-8 text-[hsl(var(--portfolio-teal))]">About Me</h2>
               <p className="leading-relaxed">
                 Hi, I'm Alugubelli Nivas! I'm a passionate first-year B.Tech Computer Science Engineering 
                 student specializing in Artificial Intelligence and Machine Learning at SRM Institute of 
@@ -175,17 +163,32 @@ const Portfolio = () => {
                 and collaborations. Let's connect and explore the exciting world of technology together!
               </p>
               
+              {/* Personal Traits */}
+              <div className="grid grid-cols-2 gap-4 pt-6">
+                <div className="text-[hsl(var(--portfolio-gray))]">
+                  <span className="text-[hsl(var(--portfolio-teal))]">Hard Worker:</span> true
+                </div>
+                <div className="text-[hsl(var(--portfolio-gray))]">
+                  <span className="text-[hsl(var(--portfolio-teal))]">Quick Learner:</span> true
+                </div>
+                <div className="text-[hsl(var(--portfolio-gray))]">
+                  <span className="text-[hsl(var(--portfolio-teal))]">Problem Solver:</span> true
+                </div>
+                <div className="text-[hsl(var(--portfolio-gray))]">
+                  <span className="text-[hsl(var(--portfolio-teal))]">Motivated:</span> true
+                </div>
+              </div>
+              
               {/* Hobbies */}
-              <div className="border-t border-gray-300 pt-8">
-                <h3 className="text-xl font-semibold mb-6 text-[hsl(var(--professional-navy))]">Hobbies & Interests</h3>
+              <div className="pt-6">
                 <div className="flex gap-4">
-                  <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-lg shadow-sm border border-gray-200">
-                    <Music className="text-[hsl(var(--professional-gold))]" size={18} />
-                    <span className="font-medium">Listening to Music</span>
+                  <div className="flex items-center gap-3 text-[hsl(var(--portfolio-gray))]">
+                    <Music className="text-[hsl(var(--portfolio-yellow))]" size={18} />
+                    <span>Listening to Music</span>
                   </div>
-                  <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-lg shadow-sm border border-gray-200">
-                    <Video className="text-[hsl(var(--professional-navy))]" size={18} />
-                    <span className="font-medium">Video Editing</span>
+                  <div className="flex items-center gap-3 text-[hsl(var(--portfolio-gray))]">
+                    <Video className="text-[hsl(var(--portfolio-yellow))]" size={18} />
+                    <span>Video Editing</span>
                   </div>
                 </div>
               </div>
@@ -195,129 +198,115 @@ const Portfolio = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-24 bg-white">
+      <section id="skills" className="py-24 bg-[hsl(var(--portfolio-navy))]">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-[hsl(var(--professional-navy))]">Skills</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-white border-gray-200 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-professional)] transition-shadow">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-bold mb-6 text-[hsl(var(--professional-navy))]">Programming Languages</h3>
-                <div className="flex flex-wrap gap-3">
-                  {["Python", "Java", "C++", "JavaScript"].map((skill) => (
-                    <Badge key={skill} variant="secondary" className="bg-[hsl(var(--professional-gold))]/10 text-[hsl(var(--professional-navy))] border-[hsl(var(--professional-gold))]/30 px-3 py-1">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+          <h2 className="text-4xl font-bold text-center mb-16 text-[hsl(var(--portfolio-teal))]">SKILLS</h2>
+          <div className="grid md:grid-cols-3 gap-12">
+            <div>
+              <h3 className="text-xl font-bold mb-6 text-white">Programming Languages</h3>
+              <div className="space-y-3">
+                {["Python", "Java", "C++", "JavaScript"].map((skill) => (
+                  <div key={skill} className="text-[hsl(var(--portfolio-gray))] text-lg">{skill}</div>
+                ))}
+              </div>
+            </div>
             
-            <Card className="bg-white border-gray-200 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-professional)] transition-shadow">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-bold mb-6 text-[hsl(var(--professional-navy))]">Web Development</h3>
-                <div className="flex flex-wrap gap-3">
-                  {["React", "Node.js", "HTML/CSS", "Git"].map((skill) => (
-                    <Badge key={skill} variant="secondary" className="bg-[hsl(var(--professional-navy))]/10 text-[hsl(var(--professional-navy))] border-[hsl(var(--professional-navy))]/30 px-3 py-1">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+            <div>
+              <h3 className="text-xl font-bold mb-6 text-white">Frontend Development</h3>
+              <div className="space-y-3">
+                {["HTML", "CSS", "React", "Bootstrap"].map((skill) => (
+                  <div key={skill} className="text-[hsl(var(--portfolio-gray))] text-lg">{skill}</div>
+                ))}
+              </div>
+            </div>
             
-            <Card className="bg-white border-gray-200 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-professional)] transition-shadow">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-bold mb-6 text-[hsl(var(--professional-navy))]">AI & Machine Learning</h3>
-                <div className="flex flex-wrap gap-3">
-                  {["Machine Learning", "Data Structures", "Algorithms", "AI"].map((skill) => (
-                    <Badge key={skill} variant="secondary" className="bg-[hsl(var(--professional-gray))]/10 text-[hsl(var(--professional-navy))] border-[hsl(var(--professional-gray))]/30 px-3 py-1">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+            <div>
+              <h3 className="text-xl font-bold mb-6 text-white">Backend Development</h3>
+              <div className="space-y-3">
+                {["Node.js", "Git"].map((skill) => (
+                  <div key={skill} className="text-[hsl(var(--portfolio-gray))] text-lg">{skill}</div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold mb-6 text-white">Databases</h3>
+              <div className="space-y-3">
+                {["MySQL", "MongoDB"].map((skill) => (
+                  <div key={skill} className="text-[hsl(var(--portfolio-gray))] text-lg">{skill}</div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold mb-6 text-white">DSA</h3>
+              <div className="space-y-3">
+                {["Data Structures and Algorithms", "Machine Learning", "AI"].map((skill) => (
+                  <div key={skill} className="text-[hsl(var(--portfolio-gray))] text-lg">{skill}</div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-24 bg-[hsl(var(--professional-light-gray))]">
+      <section id="education" className="py-24 bg-[hsl(var(--portfolio-navy))]">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-[hsl(var(--professional-navy))]">Education</h2>
-          <div className="max-w-4xl mx-auto space-y-6">
-            <Card className="bg-white border-gray-200 shadow-[var(--shadow-card)]">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-6">
-                  <BookOpen className="text-[hsl(var(--professional-gold))] mt-1" size={28} />
-                  <div className="flex-1">
-                    <div className="flex justify-between items-start mb-3">
-                      <h3 className="text-xl font-bold text-[hsl(var(--professional-navy))]">Bachelor of Technology - CSE AI&ML</h3>
-                      <span className="text-[hsl(var(--professional-gold))] font-semibold">2024-2028</span>
-                    </div>
-                    <p className="text-[hsl(var(--professional-gray))] mb-3 text-lg">SRM Institute of Science and Technology, Tiruchirappalli</p>
-                    <Badge className="bg-[hsl(var(--professional-gold))]/10 text-[hsl(var(--professional-navy))] border-[hsl(var(--professional-gold))]/30">CGPA: 9.5</Badge>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+          <h2 className="text-4xl font-bold text-center mb-16 text-[hsl(var(--portfolio-teal))]">EDUCATION</h2>
+          <div className="max-w-4xl mx-auto space-y-8">
+            <div className="border-l-4 border-[hsl(var(--portfolio-teal))] pl-8">
+              <div className="flex justify-between items-start mb-2">
+                <span className="text-white font-semibold">2024-2028</span>
+                <span className="text-[hsl(var(--portfolio-gray))]">Present</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">B.TECH CSE AI&ML</h3>
+              <p className="text-[hsl(var(--portfolio-gray))] text-lg">SRM Institute of Science and Technology, Tiruchirappalli</p>
+              <p className="text-[hsl(var(--portfolio-yellow))] font-semibold mt-2">CGPA: 9.5</p>
+            </div>
             
-            <Card className="bg-white border-gray-200 shadow-[var(--shadow-card)]">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-6">
-                  <FileText className="text-[hsl(var(--professional-navy))] mt-1" size={28} />
-                  <div className="flex-1">
-                    <div className="flex justify-between items-start mb-3">
-                      <h3 className="text-xl font-bold text-[hsl(var(--professional-navy))]">Higher Secondary Certificate</h3>
-                      <span className="text-[hsl(var(--professional-navy))] font-semibold">2020-2022</span>
-                    </div>
-                    <p className="text-[hsl(var(--professional-gray))] text-lg">Sri Chaitanya Junior Kalasala, R.K.puram</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <div className="border-l-4 border-[hsl(var(--portfolio-teal))] pl-8">
+              <div className="flex justify-between items-start mb-2">
+                <span className="text-white font-semibold">2020-2022</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">HIGHER SECONDARY CERTIFICATE</h3>
+              <p className="text-[hsl(var(--portfolio-gray))] text-lg">Sri Chaitanya Junior Kalasala, R.K.puram</p>
+            </div>
             
-            <Card className="bg-white border-gray-200 shadow-[var(--shadow-card)]">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-6">
-                  <User className="text-[hsl(var(--professional-gray))] mt-1" size={28} />
-                  <div className="flex-1">
-                    <div className="flex justify-between items-start mb-3">
-                      <h3 className="text-xl font-bold text-[hsl(var(--professional-navy))]">Secondary School Certificate</h3>
-                      <span className="text-[hsl(var(--professional-gray))] font-semibold">2018-2020</span>
-                    </div>
-                    <p className="text-[hsl(var(--professional-gray))] text-lg">Kakatiya High School, Miryalaguda</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <div className="border-l-4 border-[hsl(var(--portfolio-teal))] pl-8">
+              <div className="flex justify-between items-start mb-2">
+                <span className="text-white font-semibold">2018-2020</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">SECONDARY SCHOOL CERTIFICATE</h3>
+              <p className="text-[hsl(var(--portfolio-gray))] text-lg">Kakatiya High School, Miryalaguda</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-24 bg-white">
+      <section id="projects" className="py-24 bg-[hsl(var(--portfolio-navy))]">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-[hsl(var(--professional-navy))]">Projects</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 text-[hsl(var(--portfolio-teal))]">PROJECTS</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="bg-white border-gray-200 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-professional)] transition-all duration-300 hover:-translate-y-1">
+              <Card key={index} className="bg-[hsl(var(--portfolio-dark-navy))] border-[hsl(var(--portfolio-teal))]/30 hover:border-[hsl(var(--portfolio-teal))] transition-colors">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <Image className="text-[hsl(var(--professional-gold))] mt-1" size={24} />
-                    <h3 className="text-xl font-bold text-[hsl(var(--professional-navy))]">{project.title}</h3>
+                    <Image className="text-[hsl(var(--portfolio-yellow))] mt-1" size={24} />
+                    <h3 className="text-xl font-bold text-white">{project.title}</h3>
                   </div>
-                  <p className="text-[hsl(var(--professional-gray))] mb-6 leading-relaxed">{project.description}</p>
+                  <p className="text-[hsl(var(--portfolio-gray))] mb-6 leading-relaxed">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tech.map((tech) => (
-                      <Badge key={tech} variant="outline" className="border-[hsl(var(--professional-navy))]/30 text-[hsl(var(--professional-navy))]">
+                      <Badge key={tech} variant="outline" className="border-[hsl(var(--portfolio-teal))]/30 text-[hsl(var(--portfolio-teal))]">
                         {tech}
                       </Badge>
                     ))}
                   </div>
                   <Button 
                     variant="outline" 
-                    className="w-full border-[hsl(var(--professional-navy))]/30 text-[hsl(var(--professional-navy))] hover:bg-[hsl(var(--professional-navy))] hover:text-white"
+                    className="w-full border-[hsl(var(--portfolio-teal))]/50 text-[hsl(var(--portfolio-teal))] hover:bg-[hsl(var(--portfolio-teal))] hover:text-white"
                     onClick={() => window.open(project.link, '_blank')}
                   >
                     View Project
@@ -330,9 +319,9 @@ const Portfolio = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-[hsl(var(--professional-navy))] border-t border-[hsl(var(--professional-gray))]/20">
+      <footer className="py-12 bg-[hsl(var(--portfolio-dark-navy))] border-t border-[hsl(var(--portfolio-teal))]/20">
         <div className="container mx-auto px-6 text-center">
-          <p className="text-white/80 text-lg">© 2024 Alugubelli Nivas. Built with passion and React.</p>
+          <p className="text-[hsl(var(--portfolio-gray))] text-lg">© 2024 Alugubelli Nivas. Built with passion and React.</p>
         </div>
       </footer>
     </div>
