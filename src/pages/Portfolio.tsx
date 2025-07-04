@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, User, FileText, Image } from "lucide-react";
+import { BookOpen, User, FileText, Image, Instagram, Github, Linkedin, Mail, Music, Video } from "lucide-react";
 
 const Portfolio = () => {
   const skills = [
@@ -63,6 +63,63 @@ const Portfolio = () => {
               <p>AI & ML Enthusiast,</p>
               <p>Ambitious B.Tech Student</p>
             </div>
+            
+            {/* Personal Traits */}
+            <div className="grid grid-cols-2 gap-4 text-sm text-slate-400">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                <span>Hard Worker</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                <span>Quick Learner</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                <span>Problem Solver</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <span>Motivated</span>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex gap-4">
+              <Button 
+                variant="outline" 
+                size="icon"
+                className="border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/10"
+                onClick={() => window.open('https://www.instagram.com/__.nivasss04/', '_blank')}
+              >
+                <Instagram size={20} />
+              </Button>
+              <Button 
+                variant="outline" 
+                size="icon"
+                className="border-slate-500/50 text-slate-300 hover:bg-slate-500/10"
+                onClick={() => window.open('https://github.com/nivas798', '_blank')}
+              >
+                <Github size={20} />
+              </Button>
+              <Button 
+                variant="outline" 
+                size="icon"
+                className="border-blue-500/50 text-blue-300 hover:bg-blue-500/10"
+                onClick={() => window.open('https://www.linkedin.com/in/nivas-alugubelli-94bb9a325', '_blank')}
+              >
+                <Linkedin size={20} />
+              </Button>
+              <Button 
+                variant="outline" 
+                size="icon"
+                className="border-red-500/50 text-red-300 hover:bg-red-500/10"
+                onClick={() => window.open('mailto:nivasalugubelli6@gmail.com', '_blank')}
+              >
+                <Mail size={20} />
+              </Button>
+            </div>
+            
             <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-3 rounded-full text-lg">
               View Resume
             </Button>
@@ -117,6 +174,21 @@ const Portfolio = () => {
                 I'm actively seeking opportunities to apply my knowledge through internships, projects, 
                 and collaborations. Let's connect and explore the exciting world of technology together!
               </p>
+              
+              {/* Hobbies */}
+              <div className="border-t border-slate-600 pt-6">
+                <h3 className="text-xl font-semibold mb-4 text-cyan-400">Hobbies & Interests</h3>
+                <div className="flex gap-4">
+                  <div className="flex items-center gap-2 bg-slate-700/50 px-4 py-2 rounded-full">
+                    <Music className="text-cyan-400" size={18} />
+                    <span>Listening to Music</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-slate-700/50 px-4 py-2 rounded-full">
+                    <Video className="text-purple-400" size={18} />
+                    <span>Video Editing</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
