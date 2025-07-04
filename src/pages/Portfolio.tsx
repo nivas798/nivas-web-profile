@@ -154,7 +154,7 @@ const Portfolio = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
               <Avatar className="w-80 h-80 border-4 border-cyan-500">
-                <AvatarImage src="/lovable-uploads/profile-image.jpg" alt="Alugubelli Nivas" />
+                <AvatarImage src="/lovable-uploads/33017918-f731-4d52-bccd-4a14b6dd9c6e.png" alt="Alugubelli Nivas" />
                 <AvatarFallback className="text-6xl bg-gradient-to-br from-cyan-500 to-blue-600">AN</AvatarFallback>
               </Avatar>
             </div>
