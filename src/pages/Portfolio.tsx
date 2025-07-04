@@ -12,28 +12,34 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "AI-Powered Web Application",
-      description: "A machine learning project implementing neural networks for data prediction and analysis.",
-      tech: ["Python", "TensorFlow", "Flask"],
+      title: "🔗 NaviX – Ultra Interactive Navigation",
+      role: "UI/UX Designer & Frontend Developer",
+      description: "A futuristic, animation-rich web experience designed to revolutionize digital navigation. Features fluid micro-interactions, adaptive layouts, magnetic cursor effects, and performance-optimized transitions for visually immersive user journeys.",
+      tech: ["HTML", "Tailwind CSS", "JavaScript"],
       link: "#",
       icon: Code,
-      color: "teal"
+      color: "teal",
+      features: ["Animated multi-section landing with custom cursor effects", "Interactive navigation with smooth transitions", "Gradient-based glassmorphic UI components", "Responsive design for all devices"]
     },
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack web application with user authentication, payment integration, and admin panel.",
-      tech: ["React", "Node.js", "MongoDB"],
+      title: "⏱️ Stopwatch Pro – Precision Timer",
+      role: "Frontend Developer & UI Designer", 
+      description: "A beautifully designed web application built for high-accuracy time tracking. Combines precision timing with modern glassmorphic design, perfect for athletes, developers, and productivity-focused users.",
+      tech: ["HTML", "CSS", "JavaScript"],
       link: "#",
       icon: Globe,
-      color: "pink"
+      color: "pink",
+      features: ["Millisecond-level timing accuracy", "Animated lap time tracking", "Glassmorphism styling", "Mobile-friendly responsive UI"]
     },
     {
-      title: "Task Management System",
-      description: "Collaborative project management tool with real-time updates and team collaboration features.",
-      tech: ["JavaScript", "Express", "Socket.io"],
+      title: "🎮 Tic Tac Toe Fun – Interactive Game",
+      role: "Frontend Developer & UI Animator",
+      description: "A vibrant, kid-friendly browser game that reimagines classic tic-tac-toe with colorful visuals, playful animations, sound effects, and celebratory interactions for an engaging gaming experience.",
+      tech: ["HTML", "CSS", "JavaScript"],
       link: "#",
       icon: Zap,
-      color: "yellow"
+      color: "yellow",
+      features: ["Animated 3x3 game grid with interactive cells", "Dynamic player turns and live scoring", "Winning animations with confetti celebration", "Sound toggle and Web Audio API integration"]
     }
   ];
 
@@ -407,15 +413,30 @@ const Portfolio = () => {
                       <div className={`${bgColorClass} p-4 rounded-full mb-6 group-hover:scale-110 transition-transform duration-300`}>
                         <IconComponent className={`${iconColorClass} w-8 h-8`} />
                       </div>
-                      <h3 className="text-xl font-bold text-white mb-4">{project.title}</h3>
-                      <p className="text-[hsl(var(--portfolio-gray))] mb-6 leading-relaxed text-sm">{project.description}</p>
-                      <div className="flex flex-wrap gap-2 mb-6 justify-center">
-                        {project.tech.map((tech) => (
-                          <Badge key={tech} variant="outline" className="border-[hsl(var(--portfolio-teal))]/30 text-[hsl(var(--portfolio-teal))] text-xs">
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
+                       <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                       <p className="text-[hsl(var(--portfolio-yellow))] text-sm font-semibold mb-4">{project.role}</p>
+                       <p className="text-[hsl(var(--portfolio-gray))] mb-4 leading-relaxed text-sm">{project.description}</p>
+                       
+                       {/* Key Features */}
+                       <div className="mb-4">
+                         <h4 className="text-[hsl(var(--portfolio-teal))] text-sm font-semibold mb-2">Key Features:</h4>
+                         <ul className="text-[hsl(var(--portfolio-gray))] text-xs space-y-1">
+                           {project.features.map((feature, idx) => (
+                             <li key={idx} className="flex items-start gap-2">
+                               <span className="text-[hsl(var(--portfolio-teal))] text-xs mt-1">•</span>
+                               <span>{feature}</span>
+                             </li>
+                           ))}
+                         </ul>
+                       </div>
+
+                       <div className="flex flex-wrap gap-2 mb-6 justify-center">
+                         {project.tech.map((tech) => (
+                           <Badge key={tech} variant="outline" className="border-[hsl(var(--portfolio-teal))]/30 text-[hsl(var(--portfolio-teal))] text-xs">
+                             {tech}
+                           </Badge>
+                         ))}
+                       </div>
                       <Button 
                         variant="outline" 
                         className="w-full border-[hsl(var(--portfolio-teal))]/50 text-[hsl(var(--portfolio-teal))] hover:bg-[hsl(var(--portfolio-teal))] hover:text-white group-hover:shadow-lg transition-all duration-300"
