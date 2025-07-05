@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { BookOpen, User, FileText, Image, Instagram, Github, Linkedin, Mail, Music, Video, GraduationCap, Calendar, MapPin, Award, Code, Globe, Zap, ExternalLink } from "lucide-react";
 
 const Portfolio = () => {
@@ -16,7 +17,7 @@ const Portfolio = () => {
       role: "UI/UX Designer & Frontend Developer",
       description: "A futuristic, animation-rich web experience designed to revolutionize digital navigation. Features fluid micro-interactions, adaptive layouts, magnetic cursor effects, and performance-optimized transitions for visually immersive user journeys.",
       tech: ["HTML", "Tailwind CSS", "JavaScript"],
-      link: "#",
+      link: "https://github.com/nivas798/PRODIGY_WD_01",
       icon: Code,
       color: "teal",
       features: ["Animated multi-section landing with custom cursor effects", "Interactive navigation with smooth transitions", "Gradient-based glassmorphic UI components", "Responsive design for all devices"]
@@ -26,7 +27,7 @@ const Portfolio = () => {
       role: "Frontend Developer & UI Designer", 
       description: "A beautifully designed web application built for high-accuracy time tracking. Combines precision timing with modern glassmorphic design, perfect for athletes, developers, and productivity-focused users.",
       tech: ["HTML", "CSS", "JavaScript"],
-      link: "#",
+      link: "https://github.com/nivas798/PRODIGY_WD_02",
       icon: Globe,
       color: "pink",
       features: ["Millisecond-level timing accuracy", "Animated lap time tracking", "Glassmorphism styling", "Mobile-friendly responsive UI"]
@@ -36,7 +37,7 @@ const Portfolio = () => {
       role: "Frontend Developer & UI Animator",
       description: "A vibrant, kid-friendly browser game that reimagines classic tic-tac-toe with colorful visuals, playful animations, sound effects, and celebratory interactions for an engaging gaming experience.",
       tech: ["HTML", "CSS", "JavaScript"],
-      link: "#",
+      link: "https://github.com/nivas798/PRODIGY_WD_03",
       icon: Zap,
       color: "yellow",
       features: ["Animated 3x3 game grid with interactive cells", "Dynamic player turns and live scoring", "Winning animations with confetti celebration", "Sound toggle and Web Audio API integration"]
@@ -84,34 +85,34 @@ const Portfolio = () => {
               <Button 
                 variant="ghost" 
                 size="icon"
-                className="text-white hover:text-[hsl(var(--portfolio-teal))] hover:bg-transparent text-2xl"
+                className="text-white hover:text-[hsl(var(--portfolio-teal))] hover:bg-transparent"
                 onClick={() => window.open('https://www.linkedin.com/in/nivas-alugubelli-94bb9a325', '_blank')}
               >
-                <Linkedin size={28} />
+                <Linkedin size={20} />
               </Button>
               <Button 
                 variant="ghost" 
                 size="icon"
-                className="text-white hover:text-[hsl(var(--portfolio-teal))] hover:bg-transparent text-2xl"
+                className="text-white hover:text-[hsl(var(--portfolio-teal))] hover:bg-transparent"
                 onClick={() => window.open('https://github.com/nivas798', '_blank')}
               >
-                <Github size={28} />
+                <Github size={20} />
               </Button>
               <Button 
                 variant="ghost" 
                 size="icon"
-                className="text-white hover:text-[hsl(var(--portfolio-teal))] hover:bg-transparent text-2xl"
+                className="text-white hover:text-[hsl(var(--portfolio-teal))] hover:bg-transparent"
                 onClick={() => window.open('mailto:nivasalugubelli6@gmail.com', '_blank')}
               >
-                <Mail size={28} />
+                <Mail size={20} />
               </Button>
               <Button 
                 variant="ghost" 
                 size="icon"
-                className="text-white hover:text-[hsl(var(--portfolio-teal))] hover:bg-transparent text-2xl"
+                className="text-white hover:text-[hsl(var(--portfolio-teal))] hover:bg-transparent"
                 onClick={() => window.open('https://www.instagram.com/__.nivasss04/', '_blank')}
               >
-                <Instagram size={28} />
+                <Instagram size={20} />
               </Button>
             </div>
           </div>
@@ -396,60 +397,68 @@ const Portfolio = () => {
       <section id="projects" className="py-24 bg-[hsl(var(--portfolio-navy))]">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 text-[hsl(var(--portfolio-teal))]">PROJECTS</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => {
-              const IconComponent = project.icon;
-              const iconColorClass = project.color === 'teal' ? 'text-[hsl(var(--portfolio-teal))]' :
-                                   project.color === 'pink' ? 'text-[hsl(var(--portfolio-pink))]' :
-                                   'text-[hsl(var(--portfolio-yellow))]';
-              const bgColorClass = project.color === 'teal' ? 'bg-[hsl(var(--portfolio-teal))]/20' :
-                                 project.color === 'pink' ? 'bg-[hsl(var(--portfolio-pink))]/20' :
-                                 'bg-[hsl(var(--portfolio-yellow))]/20';
-              
-              return (
-                <Card key={index} className="bg-[hsl(var(--portfolio-dark-navy))] border-[hsl(var(--portfolio-teal))]/30 hover:border-[hsl(var(--portfolio-teal))] transition-all duration-300 hover:scale-105 group">
-                  <CardContent className="p-8">
-                    <div className="flex flex-col items-center text-center">
-                      <div className={`${bgColorClass} p-4 rounded-full mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                        <IconComponent className={`${iconColorClass} w-8 h-8`} />
-                      </div>
-                       <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                       <p className="text-[hsl(var(--portfolio-yellow))] text-sm font-semibold mb-4">{project.role}</p>
-                       <p className="text-[hsl(var(--portfolio-gray))] mb-4 leading-relaxed text-sm">{project.description}</p>
-                       
-                       {/* Key Features */}
-                       <div className="mb-4">
-                         <h4 className="text-[hsl(var(--portfolio-teal))] text-sm font-semibold mb-2">Key Features:</h4>
-                         <ul className="text-[hsl(var(--portfolio-gray))] text-xs space-y-1">
-                           {project.features.map((feature, idx) => (
-                             <li key={idx} className="flex items-start gap-2">
-                               <span className="text-[hsl(var(--portfolio-teal))] text-xs mt-1">•</span>
-                               <span>{feature}</span>
-                             </li>
-                           ))}
-                         </ul>
-                       </div>
+          <div className="max-w-6xl mx-auto">
+            <Carousel className="w-full" opts={{ align: "start", loop: true }}>
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {projects.map((project, index) => {
+                  const IconComponent = project.icon;
+                  const iconColorClass = project.color === 'teal' ? 'text-[hsl(var(--portfolio-teal))]' :
+                                       project.color === 'pink' ? 'text-[hsl(var(--portfolio-pink))]' :
+                                       'text-[hsl(var(--portfolio-yellow))]';
+                  const bgColorClass = project.color === 'teal' ? 'bg-[hsl(var(--portfolio-teal))]/20' :
+                                     project.color === 'pink' ? 'bg-[hsl(var(--portfolio-pink))]/20' :
+                                     'bg-[hsl(var(--portfolio-yellow))]/20';
+                  
+                  return (
+                    <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                      <Card className="bg-[hsl(var(--portfolio-dark-navy))] border-[hsl(var(--portfolio-teal))]/30 hover:border-[hsl(var(--portfolio-teal))] transition-all duration-300 hover:scale-105 group h-full">
+                        <CardContent className="p-8 flex flex-col h-full">
+                          <div className="flex flex-col items-center text-center flex-grow">
+                            <div className={`${bgColorClass} p-4 rounded-full mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                              <IconComponent className={`${iconColorClass} w-8 h-8`} />
+                            </div>
+                             <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                             <p className="text-[hsl(var(--portfolio-yellow))] text-sm font-semibold mb-4">{project.role}</p>
+                             <p className="text-[hsl(var(--portfolio-gray))] mb-4 leading-relaxed text-sm">{project.description}</p>
+                             
+                             {/* Key Features */}
+                             <div className="mb-4 flex-grow">
+                               <h4 className="text-[hsl(var(--portfolio-teal))] text-sm font-semibold mb-2">Key Features:</h4>
+                               <ul className="text-[hsl(var(--portfolio-gray))] text-xs space-y-1">
+                                 {project.features.map((feature, idx) => (
+                                   <li key={idx} className="flex items-start gap-2">
+                                     <span className="text-[hsl(var(--portfolio-teal))] text-xs mt-1">•</span>
+                                     <span>{feature}</span>
+                                   </li>
+                                 ))}
+                               </ul>
+                             </div>
 
-                       <div className="flex flex-wrap gap-2 mb-6 justify-center">
-                         {project.tech.map((tech) => (
-                           <Badge key={tech} variant="outline" className="border-[hsl(var(--portfolio-teal))]/30 text-[hsl(var(--portfolio-teal))] text-xs">
-                             {tech}
-                           </Badge>
-                         ))}
-                       </div>
-                      <Button 
-                        variant="outline" 
-                        className="w-full border-[hsl(var(--portfolio-teal))]/50 text-[hsl(var(--portfolio-teal))] hover:bg-[hsl(var(--portfolio-teal))] hover:text-white group-hover:shadow-lg transition-all duration-300"
-                        onClick={() => window.open(project.link, '_blank')}
-                      >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        View Project
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
+                             <div className="flex flex-wrap gap-2 mb-6 justify-center">
+                               {project.tech.map((tech) => (
+                                 <Badge key={tech} variant="outline" className="border-[hsl(var(--portfolio-teal))]/30 text-[hsl(var(--portfolio-teal))] text-xs">
+                                   {tech}
+                                 </Badge>
+                               ))}
+                             </div>
+                            <Button 
+                              variant="outline" 
+                              className="w-full border-[hsl(var(--portfolio-teal))]/50 text-[hsl(var(--portfolio-teal))] hover:bg-[hsl(var(--portfolio-teal))] hover:text-white group-hover:shadow-lg transition-all duration-300"
+                              onClick={() => window.open(project.link, '_blank')}
+                            >
+                              <ExternalLink className="w-4 h-4 mr-2" />
+                              View Project
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+              <CarouselPrevious className="border-[hsl(var(--portfolio-teal))]/50 text-[hsl(var(--portfolio-teal))] hover:bg-[hsl(var(--portfolio-teal))] hover:text-white" />
+              <CarouselNext className="border-[hsl(var(--portfolio-teal))]/50 text-[hsl(var(--portfolio-teal))] hover:bg-[hsl(var(--portfolio-teal))] hover:text-white" />
+            </Carousel>
           </div>
         </div>
       </section>
