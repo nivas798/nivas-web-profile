@@ -213,7 +213,7 @@ const Portfolio = () => {
       {/* Skills Section */}
       <section id="skills" className="py-24 bg-[hsl(var(--portfolio-navy))]">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-[hsl(var(--portfolio-teal))]">SKILLS</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 text-[hsl(var(--portfolio-teal))] animate-fade-in">SKILLS</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
             <div>
               <h3 className="text-xl font-bold mb-6 text-white">Programming Languages</h3>
@@ -321,7 +321,7 @@ const Portfolio = () => {
       {/* Education Section */}
       <section id="education" className="py-24 bg-[hsl(var(--portfolio-navy))]">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-[hsl(var(--portfolio-teal))]">EDUCATION</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 text-[hsl(var(--portfolio-teal))] animate-fade-in">EDUCATION</h2>
           <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
             {/* B.Tech Card */}
             <Card className="bg-[hsl(var(--portfolio-dark-navy))] border-[hsl(var(--portfolio-teal))]/30 hover:border-[hsl(var(--portfolio-teal))] transition-all duration-300 hover:scale-105">
@@ -396,68 +396,95 @@ const Portfolio = () => {
       {/* Projects Section */}
       <section id="projects" className="py-24 bg-[hsl(var(--portfolio-navy))]">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-[hsl(var(--portfolio-teal))]">PROJECTS</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 text-[hsl(var(--portfolio-teal))] animate-fade-in">PROJECTS</h2>
           <div className="max-w-6xl mx-auto">
             <Carousel className="w-full" opts={{ align: "start", loop: true }}>
               <CarouselContent className="-ml-2 md:-ml-4">
                 {projects.map((project, index) => {
                   const IconComponent = project.icon;
-                  const iconColorClass = project.color === 'teal' ? 'text-[hsl(var(--portfolio-teal))]' :
-                                       project.color === 'pink' ? 'text-[hsl(var(--portfolio-pink))]' :
-                                       'text-[hsl(var(--portfolio-yellow))]';
-                  const bgColorClass = project.color === 'teal' ? 'bg-[hsl(var(--portfolio-teal))]/20' :
-                                     project.color === 'pink' ? 'bg-[hsl(var(--portfolio-pink))]/20' :
-                                     'bg-[hsl(var(--portfolio-yellow))]/20';
+                  const accentColor = project.color === 'teal' ? 'portfolio-teal' :
+                                    project.color === 'pink' ? 'portfolio-pink' :
+                                    'portfolio-yellow';
                   
                   return (
                     <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                      <Card className="bg-[hsl(var(--portfolio-dark-navy))] border-[hsl(var(--portfolio-teal))]/30 hover:border-[hsl(var(--portfolio-teal))] transition-all duration-300 hover:scale-105 group h-full">
-                        <CardContent className="p-8 flex flex-col h-full">
-                          <div className="flex flex-col items-center text-center flex-grow">
-                            <div className={`${bgColorClass} p-4 rounded-full mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                              <IconComponent className={`${iconColorClass} w-8 h-8`} />
-                            </div>
-                             <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                             <p className="text-[hsl(var(--portfolio-yellow))] text-sm font-semibold mb-4">{project.role}</p>
-                             <p className="text-[hsl(var(--portfolio-gray))] mb-4 leading-relaxed text-sm">{project.description}</p>
-                             
-                             {/* Key Features */}
-                             <div className="mb-4 flex-grow">
-                               <h4 className="text-[hsl(var(--portfolio-teal))] text-sm font-semibold mb-2">Key Features:</h4>
-                               <ul className="text-[hsl(var(--portfolio-gray))] text-xs space-y-1">
-                                 {project.features.map((feature, idx) => (
-                                   <li key={idx} className="flex items-start gap-2">
-                                     <span className="text-[hsl(var(--portfolio-teal))] text-xs mt-1">•</span>
-                                     <span>{feature}</span>
-                                   </li>
-                                 ))}
-                               </ul>
-                             </div>
-
-                             <div className="flex flex-wrap gap-2 mb-6 justify-center">
-                               {project.tech.map((tech) => (
-                                 <Badge key={tech} variant="outline" className="border-[hsl(var(--portfolio-teal))]/30 text-[hsl(var(--portfolio-teal))] text-xs">
-                                   {tech}
-                                 </Badge>
-                               ))}
-                             </div>
-                            <Button 
-                              variant="outline" 
-                              className="w-full border-[hsl(var(--portfolio-teal))]/50 text-[hsl(var(--portfolio-teal))] hover:bg-[hsl(var(--portfolio-teal))] hover:text-white group-hover:shadow-lg transition-all duration-300"
-                              onClick={() => window.open(project.link, '_blank')}
-                            >
-                              <ExternalLink className="w-4 h-4 mr-2" />
-                              View Project
-                            </Button>
+                      <div className="bg-[hsl(var(--portfolio-navy))] rounded-lg p-8 border-4 border-[hsl(var(--portfolio-yellow))] font-mono text-sm relative group hover:scale-105 transition-all duration-500 hover:shadow-2xl">
+                        {/* Terminal Header */}
+                        <div className="flex gap-2 mb-6">
+                          <div className="w-3 h-3 bg-[hsl(var(--portfolio-teal))] rounded-full animate-pulse"></div>
+                          <div className="w-3 h-3 bg-[hsl(var(--portfolio-pink))] rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                          <div className="w-3 h-3 bg-[hsl(var(--portfolio-yellow))] rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                        </div>
+                        
+                        {/* Project Code Display */}
+                        <div className="space-y-2 text-white h-full">
+                          <div className="flex items-center gap-2 mb-4">
+                            <IconComponent className={`text-[hsl(var(--${accentColor}))] w-6 h-6 group-hover:scale-110 transition-transform duration-300`} />
+                            <span className="text-[hsl(var(--portfolio-pink))]">const</span> 
+                            <span className="text-[hsl(var(--portfolio-teal))]">project</span> 
+                            <span className="text-white">= {`{`}</span>
                           </div>
-                        </CardContent>
-                      </Card>
+                          
+                          <div className="ml-4 space-y-1">
+                            <div><span className="text-[hsl(var(--portfolio-teal))]">title</span>: <span className="text-[hsl(var(--portfolio-yellow))]">"{project.title}"</span>,</div>
+                            <div><span className="text-[hsl(var(--portfolio-teal))]">role</span>: <span className="text-[hsl(var(--portfolio-yellow))]">"{project.role}"</span>,</div>
+                            <div><span className="text-[hsl(var(--portfolio-teal))]">tech</span>: [
+                              <div className="ml-4">
+                                {project.tech.map((tech, idx) => (
+                                  <span key={tech} className="text-[hsl(var(--portfolio-yellow))]">
+                                    "{tech}"{idx < project.tech.length - 1 ? ',' : ''}
+                                  </span>
+                                ))}
+                              </div>
+                            ],
+                            </div>
+                            
+                            <div className="py-2">
+                              <span className="text-[hsl(var(--portfolio-teal))]">description</span>: <span className="text-[hsl(var(--portfolio-gray))] text-xs leading-relaxed">"{project.description}"</span>,
+                            </div>
+                            
+                            <div>
+                              <span className="text-[hsl(var(--portfolio-teal))]">features</span>: [
+                              <div className="ml-4 text-xs">
+                                {project.features.map((feature, idx) => (
+                                  <div key={idx} className="text-[hsl(var(--portfolio-gray))]">
+                                    "• {feature}"{idx < project.features.length - 1 ? ',' : ''}
+                                  </div>
+                                ))}
+                              </div>
+                              ],
+                            </div>
+                            
+                            <div className="py-3">
+                              <span className="text-[hsl(var(--portfolio-teal))]">status</span>: <span className="text-[hsl(var(--portfolio-pink))]">completed</span>,
+                            </div>
+                            
+                            <div className="flex gap-2">
+                              <span className="text-[hsl(var(--portfolio-teal))]">actions</span>: [
+                              <Button 
+                                variant="ghost" 
+                                size="sm"
+                                className="text-[hsl(var(--portfolio-yellow))] hover:text-[hsl(var(--portfolio-teal))] hover:bg-transparent text-xs p-1 h-auto font-mono"
+                                onClick={() => window.open(project.link, '_blank')}
+                              >
+                                "view_project()"
+                              </Button>
+                              ]
+                            </div>
+                          </div>
+                          
+                          <div className="text-white mt-4">{`};`}</div>
+                          
+                          {/* Animated cursor */}
+                          <div className="w-2 h-4 bg-[hsl(var(--portfolio-teal))] animate-pulse ml-0 mt-2"></div>
+                        </div>
+                      </div>
                     </CarouselItem>
                   );
                 })}
               </CarouselContent>
-              <CarouselPrevious className="border-[hsl(var(--portfolio-teal))]/50 text-[hsl(var(--portfolio-teal))] hover:bg-[hsl(var(--portfolio-teal))] hover:text-white" />
-              <CarouselNext className="border-[hsl(var(--portfolio-teal))]/50 text-[hsl(var(--portfolio-teal))] hover:bg-[hsl(var(--portfolio-teal))] hover:text-white" />
+              <CarouselPrevious className="border-[hsl(var(--portfolio-teal))]/50 text-[hsl(var(--portfolio-teal))] hover:bg-[hsl(var(--portfolio-teal))] hover:text-white transition-all duration-300" />
+              <CarouselNext className="border-[hsl(var(--portfolio-teal))]/50 text-[hsl(var(--portfolio-teal))] hover:bg-[hsl(var(--portfolio-teal))] hover:text-white transition-all duration-300" />
             </Carousel>
           </div>
         </div>
